@@ -1,9 +1,8 @@
-##BASIC JOINS QUESTIONS AND SOLUTIONS
+### BASIC JOINS QUESTIONS AND SOLUTIONS
 
 **1.Write an SQL query to show the unique ID of each user, If a user does not have a unique ID replace just show null.
 Return the result table in any order.**
 ```sql
-# Write your MySQL query statement below
 select unique_id,name from EmployeeUNI e1
 right join Employees e2
 on e1.id=e2.id
@@ -21,7 +20,6 @@ on s.product_id=p.product_id
 **3.Write a SQL query to find the IDs of the users who visited without making any transactions and the number of times they made these types of visits.
 Return the result table sorted in any order.**
 ```sql
-# Write your MySQL query statement below
 select customer_id,count(customer_id) as count_no_trans from visits v
 left join transactions t
 on v.visit_id=t.visit_id
@@ -41,7 +39,6 @@ WHERE w1.temperature > w2.temperature
 **6.Write an SQL query to report the name and bonus amount of each employee with a bonus less than 1000.
 Return the result table in any order.**
 ```sql
-# Write your MySQL query statement below
 select name,bonus from Employee e
 left join Bonus b
 on e.empID=b.empID
@@ -63,7 +60,6 @@ order by student_id,subject_name
 **8.Write an SQL query to report the managers with at least five direct reports.
 Return the result table in any order.**
 ```sql
-# Write your MySQL query statement below
 with c as 
 (select managerId from employee
 where managerId!='null'
@@ -78,7 +74,6 @@ where id in (select * from c)
 Write an SQL query to find the confirmation rate of each user.
 Return the result table in any order.**
 ```sql
-# Write your MySQL query statement below
 with c as
 (select s.user_id,action from Signups s
 left join Confirmations c
